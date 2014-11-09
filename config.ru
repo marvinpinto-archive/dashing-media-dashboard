@@ -2,6 +2,7 @@ require 'dashing'
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
+  set :default_dashboard, 'dashboard/sample'
 
   helpers do
     def protected!
@@ -11,8 +12,9 @@ configure do
   end
 end
 
+set :assets_prefix, '/dashboard/assets'
 map Sinatra::Application.assets_prefix do
   run Sinatra::Application.sprockets
 end
 
-run Sinatra::Application
+run Rack::URLMap.new('/dashboard' => Sinatra::Application)
