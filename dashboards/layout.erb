@@ -8,12 +8,15 @@
 
   <title><%= yield_content(:title) %></title>
 
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
   <script type="text/javascript" src="<%= ENV['WEB_BASE'] %>/assets/application.js"></script>
   <link rel="stylesheet" href="<%= ENV['WEB_BASE'] %>/assets/application.css">
 
   <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
   <link rel="icon" href="<%= ENV['WEB_BASE'] %>/assets/favicon.ico">
+  
 
 </head>
   <body>

@@ -1,0 +1,19 @@
+class Dashing.Medialist extends Dashing.Widget
+  ready: ->
+    @setColor()
+
+  onData: (data) ->
+    @setColor()
+
+  @accessor 'sabnzbd_status_icon', ->
+    if @get('sabnzbd_status') then 'fa fa-check-circle-o' else 'fa fa-times-circle-o'
+
+  @accessor 'sabnzbd_url', ->
+    "<%= ENV['SABNZBD_WEB_URL'] %>"
+
+  setColor: () ->
+    if @get('sabnzbd_status') is @get('sabnzbd_status') is true
+      $(@node).css("background-color", "#32775A") #green
+    else
+      $(@node).css("background-color", "#b80028") #red
+
