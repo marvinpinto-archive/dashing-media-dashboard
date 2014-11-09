@@ -1,8 +1,11 @@
 require 'dashing'
+require 'dotenv'
+
+Dotenv.load 'settings.ini'
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
-  set :default_dashboard, 'dashboard/media'
+  set :default_dashboard, ENV['WEB_BASE'] + '/media'
 
   helpers do
     def protected!
@@ -12,9 +15,9 @@ configure do
   end
 end
 
-set :assets_prefix, '/dashboard/assets'
+set :assets_prefix, ENV['WEB_BASE'] + '/assets'
 map Sinatra::Application.assets_prefix do
   run Sinatra::Application.sprockets
 end
 
-run Rack::URLMap.new('/dashboard' => Sinatra::Application)
+run Rack::URLMap.new(ENV['WEB_BASE'] => Sinatra::Application)

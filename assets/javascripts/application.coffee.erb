@@ -5,7 +5,7 @@
 #= require_directory .
 #= require_tree ../../widgets
 
-Batman.config.viewPrefix = 'dashboard/views'
+Batman.config.viewPrefix = '<%= ENV['WEB_BASE'] %>/views'
 
 console.log("Yeah! The dashboard has started!")
 
