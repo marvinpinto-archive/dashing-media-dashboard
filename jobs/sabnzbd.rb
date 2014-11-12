@@ -23,7 +23,7 @@ SCHEDULER.every '1s', :first_in => 0 do |job|
     server_status = false
   end
 
-  if server_status and response_code = '200'
+  if server_status and response.code == '200'
     send_event('media_overview', { sabnzbd_status: true })
   else
     send_event('media_overview', { sabnzbd_status: false })
