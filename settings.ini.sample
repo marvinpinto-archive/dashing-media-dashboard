@@ -1,3 +1,5 @@
 WEB_BASE=/dashboard
 SABNZBD_API_URL=http://127.0.0.1:8080/api
 SABNZBD_WEB_URL=/sabnzbd/
+TRANSMISSION_API_URL=http://127.0.0.1:9091/transmission/rpc
+TRANSMISSION_WEB_URL=/transmission
