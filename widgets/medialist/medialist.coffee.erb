@@ -23,9 +23,15 @@ class Dashing.Medialist extends Dashing.Widget
   @accessor 'plex_url', ->
     "<%= ENV['PLEX_WEB_URL'] %>"
 
+  # Couchpotato
+  @accessor 'couchpotato_status_icon', ->
+    if @get('couchpotato_status') then 'fa fa-check-circle-o' else 'fa fa-times-circle-o'
+  @accessor 'couchpotato_url', ->
+    "<%= ENV['COUCHPOTATO_WEB_URL'] %>"
+
   # Background color
   setColor: () ->
-    if @get('sabnzbd_status') is @get('transmission_status') is @get('plex_status') is true
+    if @get('sabnzbd_status') is @get('transmission_status') is @get('plex_status') is @get('couchpotato_status') is true
       $(@node).css("background-color", "#32775A") #green
     else
       $(@node).css("background-color", "#b80028") #red
