@@ -27,6 +27,7 @@ SCHEDULER.every '1s', :first_in => 0 do |job|
     result = JSON.parse(response.body)
     send_event('media_overview', { couchpotato_status: result['success'] })
   else
+    logger.error 'couchpotato is not up at the moment'
     send_event('media_overview', { couchpotato_status: false })
   end
 

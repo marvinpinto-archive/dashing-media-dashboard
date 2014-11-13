@@ -35,6 +35,7 @@ SCHEDULER.every '2s', :first_in => 0 do |job|
     logger.debug response.body
     send_event('media_overview', { transmission_status: true })
   else
+    logger.error 'transmission is not up at the moment'
     send_event('media_overview', { transmission_status: false })
   end
 
