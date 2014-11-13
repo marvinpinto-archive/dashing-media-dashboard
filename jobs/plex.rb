@@ -21,6 +21,7 @@ SCHEDULER.every '1s', :first_in => 0 do |job|
   if server_status and response.code == '200'
     send_event('media_overview', { plex_status: true })
   else
+    logger.error 'plex is not up at the moment'
     send_event('media_overview', { plex_status: false })
   end
 
