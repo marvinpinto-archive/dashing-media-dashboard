@@ -1,0 +1,50 @@
+class Dashing.Medialist extends Dashing.Widget
+  ready: ->
+    @setColor()
+
+  onData: (data) ->
+    @setColor()
+
+  # Sabnzbd
+  @accessor 'sabnzbd_status_icon', ->
+    if @get('sabnzbd_status') then 'fa fa-check-circle-o' else 'fa fa-times-circle-o'
+  @accessor 'sabnzbd_url', ->
+    "<%= ENV['SABNZBD_WEB_URL'] %>"
+
+  # Transmission
+  @accessor 'transmission_status_icon', ->
+    if @get('transmission_status') then 'fa fa-check-circle-o' else 'fa fa-times-circle-o'
+  @accessor 'transmission_url', ->
+    "<%= ENV['TRANSMISSION_WEB_URL'] %>"
+
+  # Plex
+  @accessor 'plex_status_icon', ->
+    if @get('plex_status') then 'fa fa-check-circle-o' else 'fa fa-times-circle-o'
+  @accessor 'plex_url', ->
+    "<%= ENV['PLEX_WEB_URL'] %>"
+
+  # Couchpotato
+  @accessor 'couchpotato_status_icon', ->
+    if @get('couchpotato_status') then 'fa fa-check-circle-o' else 'fa fa-times-circle-o'
+  @accessor 'couchpotato_url', ->
+    "<%= ENV['COUCHPOTATO_WEB_URL'] %>"
+
+  # Sickbeard
+  @accessor 'sickbeard_status_icon', ->
+    if @get('sickbeard_status') then 'fa fa-check-circle-o' else 'fa fa-times-circle-o'
+  @accessor 'sickbeard_url', ->
+    "<%= ENV['SICKBEARD_WEB_URL'] %>"
+
+  # Headphones
+  @accessor 'headphones_status_icon', ->
+    if @get('headphones_status') then 'fa fa-check-circle-o' else 'fa fa-times-circle-o'
+  @accessor 'headphones_url', ->
+    "<%= ENV['HEADPHONES_WEB_URL'] %>"
+
+  # Background color
+  setColor: () ->
+    if @get('sabnzbd_status') is @get('transmission_status') is @get('plex_status') is @get('couchpotato_status') is @get('sickbeard_status') is @get('headphones_status') is true
+      $(@node).css("background-color", "#32775A") #green
+    else
+      $(@node).css("background-color", "#b80028") #red
+
