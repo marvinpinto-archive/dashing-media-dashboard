@@ -4,7 +4,7 @@ require 'json'
 SCHEDULER.every '1s', :first_in => 0 do |job|
 
   logger = Logger.new(STDOUT)
-  logger.level = Logger::DEBUG
+  logger.level = Logger::INFO
   server_status = true
 
   url_string = ENV['COUCHPOTATO_API_URL'] +
