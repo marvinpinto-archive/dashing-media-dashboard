@@ -9,7 +9,9 @@ class Dashing.Sabstats extends Dashing.Widget
     res.toFixed(2).toString() + " MBps"
 
   @accessor 'sabnzbd_mbits_left', ->
-    @get('sabnzbd_status_mbits_left')
+    gb = @get('sabnzbd_status_mbits_left') * 0.001
+    res = Math.round(gb*100)/100
+    res.toFixed(2).toString() + " GB"
 
   @accessor 'sabnzbd_time_left', ->
     @get('sabnzbd_status_time_left')
