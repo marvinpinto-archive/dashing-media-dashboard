@@ -14,3 +14,4 @@ SICKBEARD_WEB_URL=/sickbeard/home/
 HEADPHONES_API_URL=http://127.0.0.1:8181/headphones/api
 HEADPHONES_API_KEY=12345555523
 HEADPHONES_WEB_URL=/headphones/home
+PLEX_ANNOUNCEMENTS_URL=https://plex.r.worldssl.net/announcements/announcements.json
