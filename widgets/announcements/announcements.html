@@ -1,0 +1,18 @@
+<h1 class="title" data-bind="title"></h1>
+
+<ul class="announcements-nostyle">
+  <li data-foreach-item="announcements">
+    <i class="fa fa-angle-double-right"></i>
+    <span class="label">
+        <span data-bind="item.timestamp"></span>
+    </span>
+    <span> - </span>
+    <span class="value">
+      <a data-bind-href="item.link" target="_blank">
+        <span data-bind="item.title"></span>
+      </a>
+    </span>
+  </li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
