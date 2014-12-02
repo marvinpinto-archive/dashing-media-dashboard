@@ -1,0 +1,55 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #652A42;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-posters styles
+// ----------------------------------------------------------------------------
+.widget-posters {
+
+  background-color: $background-color;
+
+  .title {
+    color: $title-color;
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+  }
+
+  .updated-at {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+
+  &.large h3 {
+    font-size: 65px;
+  }
+
+  .imgtile{
+    width:60px;
+    height:90px;
+    min-width:60px;    
+    min-height:90px;    
+    padding:1px;    
+    margin:1px;
+    background:#fff;
+    display:inline-block;
+    position:relative;
+    float:left;
+
+    box-shadow: 0 1px 3px rgba(30,25,25,0.9);
+    -moz-box-shadow: 0 1px 3px rgba(30,25,25,0.9);
+    -webkit-box-shadow: 0 1px 3px rgba(30,25,25,0.9);
+
+    -webkit-transition: top 1s ease, left 1s ease;
+    -moz-transition: top 1s ease, left 1s ease;
+    -o-transition: top 1s ease, left 1s ease;
+    -ms-transition: top 1s ease, left 1s ease;
+  }
+
+}

@@ -1,0 +1,11 @@
+<h1 class="title" data-bind="title"></h1>
+
+  <div data-foreach-item="posters" class="imgtile">
+    <div class="img">
+      <a data-bind-href="item.link" target="_blank">
+        <img data-bind-src="item.jpgsrc" data-bind-alt="item.name"/>
+      </a>
+    </div>
+  </div>  
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
