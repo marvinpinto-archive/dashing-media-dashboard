@@ -20,9 +20,18 @@ class Dashing.Announcements extends Dashing.Widget
     mdate = ("0" + d.getDate()).slice(-2)
     month_names[d.getMonth()] + " " + mdate + ", " + d.getFullYear()
 
+  timestamp_sort = (a,b) ->
+    if parseInt(a.timestamp) < parseInt(b.timestamp)
+      return -1
+    else if parseInt(a.timestamp) > parseInt(b.timestamp)
+      return 1
+    else
+      return 0
+
   @accessor 'announcements', ->
     items = @get('announcements_raw')
-    #item['timestamp'] = 'bob' for item in items
+    items.sort timestamp_sort
+    items.reverse()
     for item in items
       item['timestamp'] = get_date item['timestamp']
     items 
