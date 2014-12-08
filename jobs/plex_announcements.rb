@@ -21,7 +21,6 @@ SCHEDULER.every '1h', :first_in => 0 do |job|
 
   if server_status and response.code == '200'
     result = JSON.parse(response.body)
-    result = result.slice(0,4)
     send_event('plex_announcements', { announcements_raw: result })
   else
     logger.error '%s is not reachable the moment' % ENV['PLEX_ANNOUNCEMENTS_URL']

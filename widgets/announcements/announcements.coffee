@@ -30,9 +30,12 @@ class Dashing.Announcements extends Dashing.Widget
 
   @accessor 'announcements', ->
     items = @get('announcements_raw')
+    setlimit = if @get('setlimit') then @get('setlimit') else 4
     items.sort timestamp_sort
     items.reverse()
     for item in items
       item['timestamp'] = get_date item['timestamp']
+    limit = Math.min(items.length, setlimit)
+    items = items[0..limit-1]
     items 
 
